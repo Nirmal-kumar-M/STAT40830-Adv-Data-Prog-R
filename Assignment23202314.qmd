@@ -1,0 +1,45 @@
+---
+title: "Analysis of Motor Trend Car"
+author: "Nirmal Kumar - 23202314"
+format: html
+date-format: long
+editor: visual
+---
+
+### [INTRODUCTION]{.underline}:
+
+The dataset explored in this analysis is the ***mtcars*** dataset, found within the dataset package in R. This dataset encapsulates performance metrics and design specifications for 32 different car models from the ***1973-1974*** period.
+
+### [AIM]{.underline}:
+
+To examine the dynamics of automotive performance, I employed the ***ggplot2*** package to construct a scatter plot that visualizes the relationship between ***horsepower (hp)*** and ***miles per gallon (mpg)***. The ***mtcars*** dataset provides 32 observations, each representing unique car models with detailed automotive characteristics.
+
+```{r, eval=TRUE, echo=FALSE, fig.height=8, fig.width=10, fig.cap="Scatter plot of MPG vs Weight", message=FALSE, warning=FALSE}
+library(ggplot2)
+data(mtcars)
+ggplot(mtcars, aes(x=wt, y=mpg, color=hp)) +
+  geom_point(size=3) +
+  scale_color_gradient(low="blue", high="red") +
+  labs(title="Miles Per Gallon vs Weight",
+       subtitle="Colored by Horsepower",
+       x="Weight (1000 lbs)",
+       y="Miles Per Gallon",
+       caption="Motor Trend, 1974") +
+  theme_minimal() +
+  theme(plot.title = element_text(face="bold", color="navy"),
+        plot.subtitle = element_text(face="italic", color="darkred"))
+```
+
+### [DESCRIPTION]{.underline}**:**
+
+This scatter plot displays the relationship between the weight of cars (in thousands of pounds) and their fuel efficiency measured in miles per gallon (MPG), with each point color-coded based on horsepower. The plot reveals several key trends:
+
+-   **Higher Weight, Lower MPG**: As the weight of the cars increases, their MPG tends to decrease, indicating that heavier cars generally consume more fuel.
+
+-   **Color Gradient—Horsepower**: The color gradient from blue to red represents a range of horsepower from lower to higher. Cars with higher horsepower, shown in red, are typically heavier and less fuel-efficient.
+
+-   **Distinct Groupings**: Lighter cars (blue and purple points) exhibit higher MPG and lower horsepower, while heavier cars (red points) show the opposite trend, demonstrating a clear trade-off between power and fuel efficiency.
+
+### [SUMMARY]{.underline}:
+
+The analysis distinctly illustrates that higher horsepower in cars is generally associated with lower fuel efficiency, indicating a trade-off between power and economy. The plot clearly segregates car models into distinct clusters based on their weight, suggesting weight as a significant factor influencing a car's horsepower and fuel efficiency.
