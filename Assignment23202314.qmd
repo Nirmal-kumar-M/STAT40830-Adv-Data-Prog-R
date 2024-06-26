@@ -32,7 +32,7 @@ ggplot(mtcars, aes(x=wt, y=mpg, color=hp)) +
 
 ### [DESCRIPTION]{.underline}**:**
 
-This scatter plot displays the relationship between the weight of cars (in thousands of pounds) and their fuel efficiency measured in miles per gallon (MPG), with each point color-coded based on horsepower. The plot reveals several key trends:
+The below scatter plot displays the relationship between the weight of cars (in thousands of pounds) and their fuel efficiency measured in miles per gallon (MPG), with each point color-coded based on horsepower. The plot reveals several key trends:
 
 -   **Higher Weight, Lower MPG**: As the weight of the cars increases, their MPG tends to decrease, indicating that heavier cars generally consume more fuel.
 
